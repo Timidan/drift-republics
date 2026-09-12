@@ -16,6 +16,7 @@ export type ChainConfig = PublicChainConfig & {
   source: PublicChainConfig["source"] & { startBlock: string; chainKey: number };
   destination: PublicChainConfig["destination"] & { startBlock: string };
   proofUrl: string; writeEnabled: boolean;
+  tokenNamespace?: string;
   budget?: { maxTransactions: number; maxGas: string; maxFeePerGas: string; maxTotalFee: string };
 };
 type Transaction = <T>(run: (world: World) => T) => { world: World; result: T };
@@ -26,8 +27,8 @@ const same = (a: string | null | undefined, b: string | null | undefined) => !!a
 const shortError = (error: unknown): string => error instanceof Error ? error.message.split("\n")[0].slice(0, 180) : "Chain request unavailable.";
 const termsAbi = parseAbiParameters("bytes32,(bytes32 itemId,address seller,address buyer,uint256 amount,uint64 expires,uint64 sourceChainId,address source,uint64 destinationChainId,address destination,bytes32 nonce)");
 export const orderId = (terms: OrderTerms): Hex => keccak256(encodeAbiParameters(termsAbi, [keccak256(toHex("DRIFT_REPUBLICS_ORDER_V1")), onchainTerms(terms)]));
-export const itemToken = (id: string): Hex => keccak256(toHex("drift:shared:" + id));
-export const shipToken = (id: string): Hex => keccak256(toHex("drift:ship:" + id));
+export const itemToken = (id: string, namespace = ""): Hex => keccak256(toHex("drift:shared:" + (namespace ? namespace + ":" : "") + id));
+export const shipToken = (id: string, namespace = ""): Hex => keccak256(toHex("drift:ship:" + (namespace ? namespace + ":" : "") + id));
 const stringify = (value: unknown) => JSON.stringify(value, (_, v) => typeof v === "bigint" ? v.toString() : v);
 const kindId = (item: Item) => ({ cargoModule: 1, engine: 2, livery: 3 })[item.kind];
 
@@ -35,6 +36,7 @@ export function createChainService(db: DatabaseSync, dataDir: string, transact: 
   const path = resolve(dataDir, "chain.json");
   if (!existsSync(path)) return null;
   const config = JSON.parse(readFileSync(path, "utf8")) as ChainConfig;
+  if (config.tokenNamespace !== undefined && (typeof config.tokenNamespace !== "string" || !/^[a-zA-Z0-9-]{1,64}$/.test(config.tokenNamespace))) throw new Error("Invalid chain token namespace.");
   const readOnly = process.env.DRIFT_CHAIN_READ_ONLY === "1";
   if (!["local", "testnet"].includes(config.mode) || !isAddress(config.authority) || !isAddress(config.source.address) || !isAddress(config.destination.address) ||
       !Number.isSafeInteger(config.source.chainId) || !Number.isSafeInteger(config.destination.chainId) || config.source.chainId === config.destination.chainId ||
@@ -44,7 +46,7 @@ export function createChainService(db: DatabaseSync, dataDir: string, transact: 
     if (config.mode === "local" ? !["127.0.0.1", "localhost", "[::1]"].includes(parsed.hostname) : parsed.protocol !== "https:") throw new Error("Chain endpoints do not match the declared environment.");
   }
   if (config.mode === "testnet" && (config.source.chainId !== 11155111 || config.destination.chainId !== 102031 || config.source.chainKey !== 1)) throw new Error("Only Sepolia to Creditcoin testnet is configured for this pilot.");
-  const fingerprint = keccak256(toHex(JSON.stringify([config.source.chainId, config.source.address.toLowerCase(), config.destination.chainId, config.destination.address.toLowerCase()])));
+  const fingerprint = keccak256(toHex(JSON.stringify([config.source.chainId, config.source.address.toLowerCase(), config.destination.chainId, config.destination.address.toLowerCase(), ...(config.tokenNamespace ? [config.tokenNamespace] : [])])));
   db.exec("CREATE TABLE IF NOT EXISTS chain_meta (key TEXT PRIMARY KEY,value TEXT NOT NULL);" +
     "CREATE TABLE IF NOT EXISTS chain_challenges (session TEXT PRIMARY KEY,address TEXT NOT NULL,message TEXT NOT NULL,expires INTEGER NOT NULL);" +
     "CREATE TABLE IF NOT EXISTS chain_jobs (id TEXT PRIMARY KEY,item TEXT NOT NULL,player TEXT NOT NULL,ship TEXT NOT NULL,kind TEXT NOT NULL,body TEXT NOT NULL,state TEXT NOT NULL,raw TEXT,hash TEXT,error TEXT);");
@@ -146,7 +148,7 @@ export function createChainService(db: DatabaseSync, dataDir: string, transact: 
         if (owner === zeroAddress) continue;
         if (kind !== kindId(item) || finish.toLowerCase() !== ("0x" + item.look.hull.slice(1) + item.look.sail.slice(1)).toLowerCase() || !same(maker, w.players[item.maker]?.wallet)) throw new Error("Minted item metadata differs from its game production record.");
         const oldShip = item.installed && w.ships[item.installed];
-        const nextShip = Object.values(w.ships).find(s => shipToken(s.id) === installedShip);
+        const nextShip = Object.values(w.ships).find(s => shipToken(s.id, config.tokenNamespace) === installedShip);
         const newInstallation = nextShip && (item.installed !== nextShip.id || chain.task === "install");
         if (oldShip && (!nextShip || nextShip.id !== oldShip.id)) {
           if (item.kind !== "livery") delete oldShip.modules[item.kind];
@@ -335,7 +337,7 @@ export function createChainService(db: DatabaseSync, dataDir: string, transact: 
           if (item.installed || item.ship || item.port !== ship.port || (item.chain && item.chain.status !== "minting")) fail("Publish an uninstalled item from this harbor's warehouse.");
           const maker = w.players[item.maker].wallet;
           if (!maker) fail("The maker must link a wallet before this item is published.");
-          item.chain = { tokenId: itemToken(item.id), status: "minting", task: "mint" };
+          item.chain = { tokenId: itemToken(item.id, config.tokenNamespace), status: "minting", task: "mint" };
           args = [item.chain.tokenId, owner, maker, kindId(item), "0x" + item.look.hull.slice(1) + item.look.sail.slice(1)];
         } else {
           if (!item.chain || item.chain.status !== "owned") fail("Wait for confirmed Creditcoin ownership.");
@@ -347,7 +349,7 @@ export function createChainService(db: DatabaseSync, dataDir: string, transact: 
             if (item.kind === "cargoModule" && !canRemoveRig(w, ship)) fail("Unload within the hull limits before removing the cargo rig.");
           }
           item.chain.task = action; ship.chainPending = item.id;
-          args = [item.chain.tokenId, owner, action === "install" ? shipToken(ship.id) : zeroHash];
+          args = [item.chain.tokenId, owner, action === "install" ? shipToken(ship.id, config.tokenNamespace) : zeroHash];
         }
         queue({ id: randomUUID(), item: item.id, player, ship: ship.id, kind: action, body: stringify({ functionName: action === "mint" ? "mint" : "setInstallation", args }) });
         w.sequence++;

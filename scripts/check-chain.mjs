@@ -13,6 +13,7 @@ import { mnemonicToAccount } from 'viem/accounts';
 import { createGameServer } from '../server/main.ts';
 import { checkoutAbi, itemsAbi } from '../src/contract-abi.ts';
 import { onchainTerms } from '../src/settlement.ts';
+import { itemToken, shipToken } from '../server/chain.ts';
 
 assert.equal(process.argv.length, 2, 'This check is local only. Use scripts/testnet-trial.mjs for the authorized testnet trial.');
 
@@ -106,7 +107,7 @@ try {
     } catch { res.writeHead(503); res.end('{}'); }
   });
   await new Promise(resolve => proofServer.listen(0, '127.0.0.1', resolve));
-  const config = { mode: 'local', authority: operator.address, writeEnabled: true, proofUrl: 'http://127.0.0.1:' + proofServer.address().port,
+  const config = { mode: 'local', authority: operator.address, writeEnabled: true, tokenNamespace: 'public-world-check', proofUrl: 'http://127.0.0.1:' + proofServer.address().port,
     source: { ...checkout, chainId: 31337, chainKey: 1, rpcUrl: source.rpcUrl, explorer: '' }, destination: { ...market, chainId: 31338, rpcUrl: destination.rpcUrl, explorer: '' } };
   await writeFile(join(directory, 'chain.json'), JSON.stringify(config), { mode: 0o600 });
   await writeFile(join(directory, 'operator.key'), toHex(operator.getHdKey().privateKey), { mode: 0o600 });
@@ -124,6 +125,8 @@ try {
   const rig = Object.values(seller.state.items).find(i => i.owner === seller.state.me.id);
   await request(seller, '/chain/mint', { item: rig.id });
   await pump(seller, w => w.items[rig.id].chain?.status === 'owned', 'earned-item mint');
+  assert.equal(seller.state.items[rig.id].chain.tokenId, itemToken(rig.id, config.tokenNamespace));
+  assert.notEqual(seller.state.items[rig.id].chain.tokenId, itemToken(rig.id), 'fresh worlds must not reuse earlier item tokens');
   const order = await request(seller, '/chain/order', { item: rig.id, buyer: buyer.state.me.id, amount: '100000000000000', minutes: 5 });
   const signature = await sellerWallet.signMessage({ message: { raw: order.id } });
   await request(seller, '/chain/authorize', { id: order.id, signature });
@@ -156,6 +159,9 @@ try {
   await request(buyer, '/chain/install', { item: rig.id });
   await act(buyer, { action: 'voyage', port: 'reedhaven', route: 'sail' }, 400);
   await pump(buyer, w => w.ships[w.me.selectedShip].modules.cargoModule === rig.id && !w.ships[w.me.selectedShip].chainPending, 'confirmed fitting installation');
+  const installed = await destination.client.readContract({ address: market.address, abi: itemsAbi, functionName: 'items', args: [itemToken(rig.id, config.tokenNamespace)] });
+  assert.equal(installed[4], shipToken(buyer.state.me.selectedShip, config.tokenNamespace));
+  assert.notEqual(installed[4], shipToken(buyer.state.me.selectedShip), 'fresh worlds must not reuse earlier equipment slots');
   assert.equal(buyer.state.ships[buyer.state.me.selectedShip].look.hull, '#a63f32');
   await state(seller); await act(seller, { action: 'requestDelivery', port: 'bastion', good: 'fuel', quantity: 14, price: 140, minutes: 10 });
   const delivery = seller.state.deliveries.at(-1);

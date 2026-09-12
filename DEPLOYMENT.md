@@ -47,6 +47,16 @@ Open the public landing page, enter practice, complete the first delivery, and r
 
 The initial configuration permits practice and invitation-only shared play. Chain writes are explicitly disabled. Wallet operator keys, chain configuration, transaction journals, and invitations are private runtime material; keep them out of Git and image build contexts.
 
+## Enable testnet settlement
+
+Place the reviewed `chain.json` and its matching `operator.key` in the existing data volume, owned by the container's `node` user with mode `0600`. Retain the world's data and transaction journal. Verify both RPC chain IDs, the deployed contract authority, and the remaining operator fee budget before activation.
+
+When reusing contracts for a fresh world, assign a unique `tokenNamespace` in `chain.json`. Item and ship IDs are sequential within each world; the namespace prevents reusing another world's chain tokens and equipment slots. Once the chain service has initialized, preserve that namespace with the data volume. Existing deployments without a namespace retain their original IDs.
+
+Set `DRIFT_CHAIN_READ_ONLY=0` in the private deployment environment and recreate only `drift-republics` with the reviewed image. The default remains `1`. Writes also require `writeEnabled: true`, a matching operator key, and an explicit transaction/fee budget in `chain.json`. Verify `/api/config` reports `configured: true`, `readOnly: false`, and `writeEnabled: true`; then verify finalized synchronization separately. These flags alone do not prove a successful wallet purchase.
+
+To pause new operator transactions, set `DRIFT_CHAIN_READ_ONLY=1` and recreate the container. Preserve signed jobs: changing the flag cannot cancel transactions already broadcast. Transactions are available to linked wallets in shared play; practice remains isolated.
+
 ## Persistence and rollback
 
 Keep the volume across all releases. Before an update that changes stored data, stop only this app and take a consistent backup of its data volume. Never copy a live SQLite database without its transaction state.

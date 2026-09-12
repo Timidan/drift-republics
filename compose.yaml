@@ -10,7 +10,7 @@ services:
       DRIFT_API_PORT: "4187"
       DRIFT_ORIGIN: https://drift.timidan.xyz
       DRIFT_TRUST_PROXY: "1"
-      DRIFT_CHAIN_READ_ONLY: "1"
+      DRIFT_CHAIN_READ_ONLY: "${DRIFT_CHAIN_READ_ONLY:-1}"
     volumes:
       - drift-data:/app/data
     networks:
