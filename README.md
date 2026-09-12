@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="public/assets/drift/chains/drift-wallet.svg" width="88" height="88" alt="Drift Republics sailing boat logo">
+  <img src="https://raw.githubusercontent.com/Timidan/drift-republics/ce656cb9cbcd594625fc517a2e83becdf5b80444/public/assets/drift/chains/drift-wallet.svg" width="88" height="88" alt="Drift Republics sailing boat logo">
 </p>
 <h1 align="center">Drift Republics</h1>
 <p align="center"><strong>Build a merchant house. Sail the trade routes. Keep the republics afloat.</strong></p>
 <p align="center">A browser game about making goods, moving cargo, and building an economy together.</p>
-<p align="center"><a href="#play">Gameplay</a> · <a href="#run-locally">Run locally</a> · <a href="SETTLEMENT.md">Creditcoin integration</a> · <a href="DEPLOYMENT.md">Deployment</a></p>
+<p align="center"><a href="https://drift.timidan.xyz">Play online</a> · <a href="#play">Gameplay</a> · <a href="#run-locally">Run locally</a> · <a href="SETTLEMENT.md">Creditcoin integration</a> · <a href="DEPLOYMENT.md">Deployment</a></p>
 
 Three floating cities depend on one another. Reedhaven refines fuel, Ironwake works metal, and Bastion builds ships. Start with a small boat and a workshop, find a buyer, and turn a successful delivery into your next upgrade. When Bastion relocates, the trade routes change with it.
 
