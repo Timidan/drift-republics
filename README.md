@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Timidan/drift-republics/ce656cb9cbcd594625fc517a2e83becdf5b80444/public/assets/drift/chains/drift-wallet.svg" width="88" height="88" alt="Drift Republics sailing boat logo">
+  <img src="https://drift.timidan.xyz/assets/drift/chains/drift-wallet.svg" width="88" height="88" alt="Drift Republics sailing boat logo">
 </p>
 <h1 align="center">Drift Republics</h1>
 <p align="center"><strong>Build a merchant house. Sail the trade routes. Keep the republics afloat.</strong></p>
