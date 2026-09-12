@@ -41,7 +41,7 @@ Testnet deployment and trial scripts also journal their signed transactions and 
 
 ## Runtime availability
 
-The provided deployment starts with chain writes disabled and no operator key or chain configuration. Ordinary gameplay remains available. A separate configured testnet environment is required for wallet binding and settlement.
+Self-hosted deployments default to chain writes disabled and require private operator and chain configuration. The hosted shared harbor is configured for bounded testnet transactions. Wallet binding and settlement require shared play; practice keeps its goods separate.
 
 Installed-wallet discovery, WalletConnect pairing, and transaction controls are implemented. A complete purchase through a real browser wallet remains unverified. Local contract and worker checks use an explicitly labelled verifier fixture; they do not prove native Attestcoin verification.
 

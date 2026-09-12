@@ -33,7 +33,7 @@ An optional testnet market gives crafted ship fittings onchain ownership. The se
 
 Marks remain in-game accounting units. No token or payment is bridged. The game authority remains trusted for production and installation rules. See [the settlement protocol](SETTLEMENT.md) for the paid path, delayed proofs, unpaid recovery, and trust boundaries.
 
-The deployment configuration in this repository starts a fresh game world with chain writes disabled. It does not include operator keys, saved accounts, or a chain configuration. Installed-wallet discovery and WalletConnect pairing are implemented; a complete purchase through a real browser wallet remains unverified. The contracts target testnets and have not received an independent security audit.
+The hosted shared harbor is configured for Creditcoin testnet transactions with a bounded operator budget. Practice keeps its goods separate. Self-hosted deployments default to chain writes disabled and require private operator and chain configuration as described in [Deployment](DEPLOYMENT.md). Installed-wallet discovery and WalletConnect pairing are implemented; a complete purchase through a real browser wallet remains unverified. The contracts target testnets and have not received an independent security audit.
 
 ## Run locally
 
