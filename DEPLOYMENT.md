@@ -23,15 +23,16 @@ Provision the DNS record and TLS through the host's approved configuration. Add 
 
 ```caddyfile
 drift.timidan.xyz {
+    import cloudflare_only
     encode zstd gzip
     reverse_proxy drift-republics:4187 {
-        header_up X-Forwarded-For {http.request.client_ip}
+        header_up X-Forwarded-For {http.request.header.CF-Connecting-IP}
         flush_interval -1
     }
 }
 ```
 
-If the host already uses Cloudflare-only origin access and an origin certificate, apply its existing restricted route policy and certificate instead of introducing a second TLS configuration. The proxy must trust only the actual upstream proxy ranges before using `client_ip`. Validate the complete Caddy configuration before reloading it.
+The host's existing `cloudflare_only` snippet restricts origin access to Cloudflare and supplies its existing origin certificate. Only with that restriction in place does this route use [Cloudflare's verified visitor header](https://developers.cloudflare.com/fundamentals/reference/http-headers/#cf-connecting-ip). Do not use this header on an unrestricted origin. Validate the complete Caddy configuration before reloading it.
 
 `DRIFT_TRUST_PROXY=1` requires the private app port and the header replacement above. Forwarding an arbitrary incoming header would allow clients to bypass request limits.
 
