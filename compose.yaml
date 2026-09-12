@@ -1,0 +1,40 @@
+services:
+  drift-republics:
+    image: drift-republics:${DRIFT_RELEASE:-local}
+    build: .
+    container_name: drift-republics
+    restart: unless-stopped
+    init: true
+    environment:
+      DRIFT_HOST: 0.0.0.0
+      DRIFT_API_PORT: "4187"
+      DRIFT_ORIGIN: https://drift.timidan.xyz
+      DRIFT_TRUST_PROXY: "1"
+      DRIFT_CHAIN_READ_ONLY: "1"
+    volumes:
+      - drift-data:/app/data
+    networks:
+      - public_proxy
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 768m
+    cpus: 1.0
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  drift-data:
+    name: drift_republics_data
+
+networks:
+  public_proxy:
+    external: true

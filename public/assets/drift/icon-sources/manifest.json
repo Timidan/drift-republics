@@ -1,0 +1,410 @@
+[
+  {
+    "id": "kelp",
+    "icon": "algae",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/algae.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/algae.svg",
+    "sha256": "ecbc6ab5887f4d1c275addb73d2a8852a854cce82f0437b2f663a934e737d506"
+  },
+  {
+    "id": "timber",
+    "icon": "wood-pile",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/wood-pile.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/wood-pile.svg",
+    "sha256": "e4aeaff5112e08792e606fd3d7159c65efbbf3132b09ec886ca75310c796ee64"
+  },
+  {
+    "id": "scrap",
+    "icon": "nails",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/nails.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/nails.svg",
+    "sha256": "76dce264f2249d13b7d751146e90c52a9bfb8fc1bab5ea63a295972698e16e0b"
+  },
+  {
+    "id": "fuel",
+    "icon": "jerrycan",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/jerrycan.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/jerrycan.svg",
+    "sha256": "d78c1b98e9d6babd8a82d39274c9d9e43f7f53302b38a9542c05cfb4a647a431"
+  },
+  {
+    "id": "plates",
+    "icon": "metal-plate",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/metal-plate.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/metal-plate.svg",
+    "sha256": "ff19eeac5d449913d226d6597bf5f3e153bb1fc66fc6b4954141f5ab5a548cef"
+  },
+  {
+    "id": "repairKit",
+    "icon": "toolbox",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/toolbox.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/toolbox.svg",
+    "sha256": "b1854af45f6f5db1d9d28424c0df081e14a7a3e811c06abcdee98d615ebf47a2"
+  },
+  {
+    "id": "fish",
+    "icon": "double-fish",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/double-fish.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/double-fish.svg",
+    "sha256": "e1377788a41a7be6e4370dd28724e43c4c6c8f73666f5ec5439831147c92acf9"
+  },
+  {
+    "id": "marks",
+    "icon": "coins",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/coins.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/coins.svg",
+    "sha256": "261f61209fad4adc71e6e3faa061e854ab3de6c3fa13aef9bfdac2b643f4e306"
+  },
+  {
+    "id": "cargoModule",
+    "icon": "cargo-crate",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/cargo-crate.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/cargo-crate.svg",
+    "sha256": "d5e17d61aac0017320f66d2c9bab9330da2b962986c88801753390e9a29e1f92"
+  },
+  {
+    "id": "engine",
+    "icon": "boat-engine",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/boat-engine.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/boat-engine.svg",
+    "sha256": "f291673127e31706148c8bd6b327ee5e3acf44012f298a2b98b58a13509426db"
+  },
+  {
+    "id": "livery",
+    "icon": "paint-brush",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/paint-brush.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/paint-brush.svg",
+    "sha256": "6ec4982a431d83de9691543a8ab4e5036e6afa63a14c8aa15ae02d31ca8fda12"
+  },
+  {
+    "id": "harbor",
+    "icon": "harbor-dock",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/harbor-dock.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/harbor-dock.svg",
+    "sha256": "4f99c374c4c6138e0f6022eb7f3a0e0c43d05608401117ef10c8aff6e2fe29f5"
+  },
+  {
+    "id": "workshop",
+    "icon": "hammer-nails",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/hammer-nails.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/hammer-nails.svg",
+    "sha256": "59af3882e563f5430c9c7e5de384b49841ce1f88a806315ae4ffbc8f8d701f5f"
+  },
+  {
+    "id": "shipyard",
+    "icon": "cargo-crane",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/cargo-crane.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/cargo-crane.svg",
+    "sha256": "08640f99230de12b6fee05fbff3fd3cef08e5602ce69915077084596aca51132"
+  },
+  {
+    "id": "deck",
+    "icon": "ship-wheel",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/ship-wheel.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/ship-wheel.svg",
+    "sha256": "64f7b91a0224ad5331139ea6c8f3c3145399e273c77a2797c52986f47198824b"
+  },
+  {
+    "id": "voyage",
+    "icon": "compass",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/compass.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/compass.svg",
+    "sha256": "beb88d002e3f2e3759a41c626ff67f52b9d92d70605a24e8e8d3ea9915208f20"
+  },
+  {
+    "id": "city",
+    "icon": "village",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/village.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/village.svg",
+    "sha256": "45805e2ba3ee12adcc1c67e8183e526831156a3fc9eba0595e687d79078c4048"
+  },
+  {
+    "id": "anchor",
+    "icon": "anchor",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/anchor.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/anchor.svg",
+    "sha256": "134bba71f6b20c1983e821a0a36d6c83b813080951f1a5806c86a8136556f550"
+  },
+  {
+    "id": "hull",
+    "icon": "ship-bow",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/ship-bow.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/ship-bow.svg",
+    "sha256": "4f4355fb127b675977232758f9187c074f40f4a808b68780abf1533f422922e9"
+  },
+  {
+    "id": "leaf",
+    "icon": "solid-leaf",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/solid-leaf.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/solid-leaf.svg",
+    "sha256": "d138f06278698b492d71c8751b685983bd8668b303a012a5b5d13a3cc82d6c6c"
+  },
+  {
+    "id": "forge",
+    "icon": "anvil",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/anvil.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/anvil.svg",
+    "sha256": "8f1b9ce7c512d167719dcd77fc169c811eb69b25e30ed1ae5610d161ce9007a4"
+  },
+  {
+    "id": "wheel",
+    "icon": "ship-wheel",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/ship-wheel.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/ship-wheel.svg",
+    "sha256": "64f7b91a0224ad5331139ea6c8f3c3145399e273c77a2797c52986f47198824b"
+  },
+  {
+    "id": "cutter",
+    "icon": "sailboat",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/sailboat.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/sailboat.svg",
+    "sha256": "04c4caf6a26b839b4cb4080c3d49b3c1379ef979ecdcc170a449d2e03a96b35f"
+  },
+  {
+    "id": "lighter",
+    "icon": "wood-canoe",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/wood-canoe.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/wood-canoe.svg",
+    "sha256": "bacea3be135041b9ff20232485378a0992332d364fe6dded78df9270fbd57901"
+  },
+  {
+    "id": "barge",
+    "icon": "cargo-ship",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/cargo-ship.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/cargo-ship.svg",
+    "sha256": "db0a1c2781f28f29bc2368ccbb5cf48148ddc9ebf74306369f3ead8951d288f0"
+  },
+  {
+    "id": "fishing",
+    "icon": "fishing-pole",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/fishing-pole.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/fishing-pole.svg",
+    "sha256": "3aad214e0bb8a934972773a11fc69fa099009c4528600828eaf969b5ad9fe16c"
+  },
+  {
+    "id": "salvage",
+    "icon": "ship-wreck",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/ship-wreck.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/ship-wreck.svg",
+    "sha256": "6be7dbb2948da307b6f3cc5019dda213452e54469c160f992aba8548a3cabbae"
+  },
+  {
+    "id": "sounder",
+    "icon": "radar-sweep",
+    "author": "Lorc",
+    "page": "https://game-icons.net/1x1/lorc/radar-sweep.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/lorc/radar-sweep.svg",
+    "sha256": "43815bf3e2fd0dde51e9ad23f90c1cc02d3f6095d1ca23afda780ae994ebf599"
+  },
+  {
+    "id": "stock",
+    "icon": "warehouse",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/warehouse.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/warehouse.svg",
+    "sha256": "c28cbd018b330d917ac2de7b578e6e07f621d084b36b8d9ddb17c39f994aa0a3"
+  },
+  {
+    "id": "sail",
+    "icon": "sail",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/sail.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/sail.svg",
+    "sha256": "e40973543539eb9b394d0bab4c3b0dfbc44aa3558994db29b0ebd86cf7c3c23f"
+  },
+  {
+    "id": "bucket",
+    "icon": "empty-wood-bucket-handle",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/empty-wood-bucket-handle.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/empty-wood-bucket-handle.svg",
+    "sha256": "9eb4d7696e60a50c7ccd0333d4367da6bb06ea88d76f81c35e966ccf8a57ed12"
+  },
+  {
+    "id": "rope",
+    "icon": "rope-coil",
+    "author": "Delapouite",
+    "page": "https://game-icons.net/1x1/delapouite/rope-coil.html",
+    "source": "https://raw.githubusercontent.com/game-icons/icons/82d948812bfe3f269ef8f731dcdb07b08160edc4/delapouite/rope-coil.svg",
+    "sha256": "c02e110c6a96a071ac9142bc58e07efa309732b7f3f6dede9b0538dc40bf90a7"
+  },
+  {
+    "id": "wind",
+    "icon": "wind",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/wind",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/wind.svg",
+    "sha256": "eb35f6f00125b779a993c21ee761432faf8fc3210272c94448f63e2196d419b7"
+  },
+  {
+    "id": "crew",
+    "icon": "users",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/users",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/users.svg",
+    "sha256": "eeed488a1ec95ba730dd69996536fb65061d6ea273afb2429ae47e65eebf401c"
+  },
+  {
+    "id": "arrow",
+    "icon": "arrow-right",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/arrow-right",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/arrow-right.svg",
+    "sha256": "288397fdb73bb4f783cf9eabb726ff47357df1d4e3f1201dd748090579f108b9"
+  },
+  {
+    "id": "plus",
+    "icon": "plus",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/plus",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/plus.svg",
+    "sha256": "7f6af73bf1ff6c4bca3f18351c8d1bdec6749c0c2530c4de5da85d520c21df17"
+  },
+  {
+    "id": "close",
+    "icon": "x",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/x",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/x.svg",
+    "sha256": "4a9cdab38fbb96162e7dace28e33f4ca0e49d8963a6162abc3d4691b7d675117"
+  },
+  {
+    "id": "check",
+    "icon": "check",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/check",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/check.svg",
+    "sha256": "7f33acc9a77a61659531044525fc008edebe215bf4dcf1c789c8674ad3277db0"
+  },
+  {
+    "id": "warning",
+    "icon": "triangle-alert",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/triangle-alert",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/triangle-alert.svg",
+    "sha256": "4866f38b8560d410f21e3226413e0b77997b6dfbb6931fadfe0a0d5aef9ffeb4"
+  },
+  {
+    "id": "settings",
+    "icon": "settings",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/settings",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/settings.svg",
+    "sha256": "0ae27fd0f81999229e3127ac96c5b32edfea448e291d509e76212b917551d66b"
+  },
+  {
+    "id": "eye",
+    "icon": "eye",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/eye",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/eye.svg",
+    "sha256": "5bf90197dd7629cad64a2e48d1186a71559deb6121207d10e3dc5b19ebaffdcf"
+  },
+  {
+    "id": "home",
+    "icon": "house",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/house",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/house.svg",
+    "sha256": "28216c479005731ef5e382e7d8627eda2b129b019eb1f3d9de9f5915576d448e"
+  },
+  {
+    "id": "expand",
+    "icon": "maximize",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/maximize",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/maximize.svg",
+    "sha256": "1f790856b0de805ab62e871609f1990b89d227d472022e57a11fde015aad4826"
+  },
+  {
+    "id": "reset",
+    "icon": "rotate-ccw",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/rotate-ccw",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/rotate-ccw.svg",
+    "sha256": "622685386ab4017eabfde01cd74550a20b1924df233b353f73b6b155371f2afd"
+  },
+  {
+    "id": "chat",
+    "icon": "message-circle",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/message-circle",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/message-circle.svg",
+    "sha256": "146f39740fe50844394d56ae1f8821937655bcfff3842bf6fe8ffc0bcd324076"
+  },
+  {
+    "id": "star",
+    "icon": "star",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/star",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/star.svg",
+    "sha256": "c59da86b889569387db28e69ad00a89f96af22863ad9eea9aa12c4876a14338c"
+  },
+  {
+    "id": "book",
+    "icon": "book-open",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/book-open",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/book-open.svg",
+    "sha256": "9b9bed0ff057283d5c5c5a1c71f8d3e927db26a56639603a92fdf7b25961510e"
+  },
+  {
+    "id": "clock",
+    "icon": "clock",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/clock",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/clock.svg",
+    "sha256": "e9d3e3acf4d1c280fcf8092293439dc0a4756a908ceb859de144b12451cd1cb9"
+  },
+  {
+    "id": "lock",
+    "icon": "lock",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/lock",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/lock.svg",
+    "sha256": "d2cfe60cac8deaef36442b5c8218c1e61abe18222784b2a370ea090d13fca840"
+  },
+  {
+    "id": "sun",
+    "icon": "sun",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/sun",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/sun.svg",
+    "sha256": "a3955c8b0425fcc5c9ba12d2bdd77fe53b2cd5dd05e7742a56f342e996fb2ef8"
+  },
+  {
+    "id": "sound",
+    "icon": "volume-2",
+    "author": "Lucide contributors",
+    "page": "https://lucide.dev/icons/volume-2",
+    "source": "https://raw.githubusercontent.com/lucide-icons/lucide/a79b2d131dab2bf20cb224bd0937b439a9c4fa99/icons/volume-2.svg",
+    "sha256": "fb404f9c128a0579de67b399177631e5edb3502fdc247ceb30e8b15754b46071"
+  }
+]

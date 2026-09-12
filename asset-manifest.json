@@ -1,0 +1,258 @@
+[
+  {
+    "path": "/assets/pirate/ship-small.glb",
+    "bytes": 116440,
+    "sha256": "6fdabdfd358f345ad3dd0510af4165843ab3fffe46357395c94ca00db4f317b3"
+  },
+  {
+    "path": "/assets/pirate/ship-medium.glb",
+    "bytes": 144944,
+    "sha256": "279ea019268f855240c3cebf7616644c8141c20bee617da72eae4733b8e310af"
+  },
+  {
+    "path": "/assets/pirate/boat-row-small.glb",
+    "bytes": 17616,
+    "sha256": "846d9b17a73f80e03f7201d3bf0ad1b1bbb49e114b99697740d3426e4f42482d"
+  },
+  {
+    "path": "/assets/pirate/structure.glb",
+    "bytes": 27988,
+    "sha256": "b82b2f949063fc418576dc14fcaedf407db6badf87dc529a33114e2f62606f9a"
+  },
+  {
+    "path": "/assets/pirate/structure-roof.glb",
+    "bytes": 34480,
+    "sha256": "d7518ffa7cf209b91dc07920e762f28706a367742edc45c27ae45c434b089329"
+  },
+  {
+    "path": "/assets/pirate/structure-platform.glb",
+    "bytes": 24248,
+    "sha256": "250e85e6021c47a1244603bba3924f04dbc4b0ab171fb589fb9eacc952609904"
+  },
+  {
+    "path": "/assets/pirate/structure-platform-small.glb",
+    "bytes": 23068,
+    "sha256": "6f056b0563f4a980908129fe3c53df1d83f3f41c2fb31bbea87e074515107880"
+  },
+  {
+    "path": "/assets/pirate/structure-platform-dock.glb",
+    "bytes": 33336,
+    "sha256": "bf64343d37b5570cb78cf0918e3eeb98f96f9b2c69b3f16d103c61ebc8f063f7"
+  },
+  {
+    "path": "/assets/pirate/structure-platform-dock-small.glb",
+    "bytes": 32156,
+    "sha256": "63fb708c20db73860da2380ba6c13e4725930c07535bb2ed5958a2f30eeea36c"
+  },
+  {
+    "path": "/assets/pirate/platform-planks.glb",
+    "bytes": 6524,
+    "sha256": "4313f45d4feb8cd01adbb4b4785f368c7df091f33e473dea536172868805b167"
+  },
+  {
+    "path": "/assets/pirate/barrel.glb",
+    "bytes": 14092,
+    "sha256": "7616dedf7c1023afa6ecd3c52a4609460aae0e582dee14e60ec5e47c1174793b"
+  },
+  {
+    "path": "/assets/pirate/crate.glb",
+    "bytes": 9232,
+    "sha256": "b525674e07c8b83667512a8dd93be0d7684358347d0e64d2bb16b156ac382ed1"
+  },
+  {
+    "path": "/assets/pirate/crate-bottles.glb",
+    "bytes": 58588,
+    "sha256": "8412a3d3dc00a81ac61f0975682ef9f08288bee5c5eb783b09dbc1144e655302"
+  },
+  {
+    "path": "/assets/pirate/palm-bend.glb",
+    "bytes": 36528,
+    "sha256": "8c5c6f119ca62b63d4a6e5e3e3b74b3a7415815a9e448fd1408a2858ae95d40f"
+  },
+  {
+    "path": "/assets/pirate/palm-straight.glb",
+    "bytes": 36524,
+    "sha256": "a4101242b8c825280dfb6152900285aacc091203ce7bf9c743579599f1496520"
+  },
+  {
+    "path": "/assets/pirate/rocks-a.glb",
+    "bytes": 27644,
+    "sha256": "df8f27bd88a9b624337b08adde53c73dd25ddabd52dbee1de9da412d68bb4f08"
+  },
+  {
+    "path": "/assets/pirate/rocks-b.glb",
+    "bytes": 31316,
+    "sha256": "218cf9bfbe51228c78c9fa48a8543bef1037a695024f8fd5f3c47eec4c3a26d4"
+  },
+  {
+    "path": "/assets/pirate/rocks-sand-a.glb",
+    "bytes": 57052,
+    "sha256": "bde0570946080d6f2dafd63a34be640d5c3713abd4559d6a9d689ce63f74113f"
+  },
+  {
+    "path": "/assets/pirate/rocks-sand-b.glb",
+    "bytes": 53404,
+    "sha256": "55ef34f2e96fcd8687a422b6287295cb94e04540ec964a0f42900ce55c89b719"
+  },
+  {
+    "path": "/assets/pirate/patch-sand.glb",
+    "bytes": 10212,
+    "sha256": "9c7331c40897f293d2fec4035d534581ccb9b4e105e4cbce5cfd3abd0bb15f90"
+  },
+  {
+    "path": "/assets/pirate/patch-grass.glb",
+    "bytes": 8416,
+    "sha256": "0c928d062fc8094bf2be7fe319b7831fbb3d798567b93d5b24d04739ab3c370d"
+  },
+  {
+    "path": "/assets/pirate/tower-watch.glb",
+    "bytes": 21672,
+    "sha256": "0cdba767016b9ee8831084f94357f6b6dd00e2f10c6db41d81f15352dff5c4b4"
+  },
+  {
+    "path": "/assets/pirate/flag.glb",
+    "bytes": 15184,
+    "sha256": "374500dc875e3e713fbd3e2d4bf18087b4a450bfc5a7b04b4329aaf0c0e3a877"
+  },
+  {
+    "path": "/assets/pirate/flag-pennant.glb",
+    "bytes": 13640,
+    "sha256": "05956b9389135492e0644bd7d49711d1e4f865cd67808f7da5709a23e02d7d6f"
+  },
+  {
+    "path": "/assets/town/wall-wood.glb",
+    "bytes": 4808,
+    "sha256": "8699614fdbc99f565942709c0977c964e2c12f3b3c60098a6e2c397c973f08db"
+  },
+  {
+    "path": "/assets/town/wall-wood-door.glb",
+    "bytes": 30744,
+    "sha256": "2aa4e982fcb6434be4e6051fcee7972799ff5350a3f36ca8bf71530b84608123"
+  },
+  {
+    "path": "/assets/town/wall-wood-window-shutters.glb",
+    "bytes": 10612,
+    "sha256": "c45a63690760cd5de3842ffbe222092e8cd483524679c4ba92fef4d1e52f7248"
+  },
+  {
+    "path": "/assets/town/wall-wood-corner.glb",
+    "bytes": 6804,
+    "sha256": "f4c38de352c80c110874fabe7323577d985af191c25242887574238146dc7d82"
+  },
+  {
+    "path": "/assets/town/wall-wood-block.glb",
+    "bytes": 8548,
+    "sha256": "c405053f4ac8ae0c85e9973613d205f0bc9dff0a5fe95a4910823384e131e824"
+  },
+  {
+    "path": "/assets/town/roof.glb",
+    "bytes": 9324,
+    "sha256": "8f245dfc04b8e76b2833081462f7530c2aea9114a703161c1d9a4a975927347d"
+  },
+  {
+    "path": "/assets/town/roof-left.glb",
+    "bytes": 12904,
+    "sha256": "ff3fdc7d3572ee0f20746ae4d5b02a6ad26c185468b48fd0950852231cf81f15"
+  },
+  {
+    "path": "/assets/town/roof-right.glb",
+    "bytes": 13004,
+    "sha256": "5f88d69d73a0beb5d74a69928adcb8aa6464c4ec3ad34b7c154c4ddcb17ad5f3"
+  },
+  {
+    "path": "/assets/town/roof-gable.glb",
+    "bytes": 7632,
+    "sha256": "4bb6bdbcadbb8ebeb69d720e29f6c2e57c99d98966baa41fd86914d3c13d6039"
+  },
+  {
+    "path": "/assets/town/roof-gable-end.glb",
+    "bytes": 6056,
+    "sha256": "2ee635e8550180bb7840f7fdfff0b0835a34a425ffb903f19657cde65c261704"
+  },
+  {
+    "path": "/assets/town/roof-flat.glb",
+    "bytes": 3448,
+    "sha256": "48bc045365398c92291f65ab80038670b14f85974aadedc3d17847254a0881b5"
+  },
+  {
+    "path": "/assets/town/roof-point.glb",
+    "bytes": 6180,
+    "sha256": "a7dfd157128e04105e976d7a47f772e95e4bd9f3d73b87a00b43861f406b94f8"
+  },
+  {
+    "path": "/assets/town/chimney.glb",
+    "bytes": 4656,
+    "sha256": "a15cdbd13860092f6d793e5b785043eb90a49cdaa725bb71df9fd154ca68dac6"
+  },
+  {
+    "path": "/assets/town/stall-red.glb",
+    "bytes": 24304,
+    "sha256": "aa20a630f417032c46aaefbc779fd2b3355b451bf05d31acc36fd664146866b1"
+  },
+  {
+    "path": "/assets/town/stall-green.glb",
+    "bytes": 27120,
+    "sha256": "2da2f7b31cde5d943d7c08c457bbb39797ef0a607921fde0b8455f338ce40205"
+  },
+  {
+    "path": "/assets/town/cart.glb",
+    "bytes": 52920,
+    "sha256": "63503cd0a7398310e01aabc8e3663f711a7517394d23d179d0695157fee99d40"
+  },
+  {
+    "path": "/assets/town/lantern.glb",
+    "bytes": 14984,
+    "sha256": "f270637e3083d6e84a30626ee05df2b09597a642985a7f5c3e4ab5bb1c7a8d55"
+  },
+  {
+    "path": "/assets/town/fence.glb",
+    "bytes": 7672,
+    "sha256": "92261b9419108d84f3db0def5eadeffa783032029897562b1f512e4a7570ef48"
+  },
+  {
+    "path": "/assets/town/planks.glb",
+    "bytes": 11148,
+    "sha256": "619705afa7ad290bfa499a701fd7ea07210ad535126cb3abc245b6f16e1420ab"
+  },
+  {
+    "path": "/assets/town/pillar-wood.glb",
+    "bytes": 5312,
+    "sha256": "569c83dade6063399576640e80db35c34e422817ec132419fc2e2695189be5cf"
+  },
+  {
+    "path": "/assets/town/banner-red.glb",
+    "bytes": 9988,
+    "sha256": "4e4a83de16e5979d2b34bb206d3bf3703a9039711bc658b37e3738d43090703d"
+  },
+  {
+    "path": "/assets/town/tree.glb",
+    "bytes": 18188,
+    "sha256": "e8d81b97297de62699b92559cee7b247da84b1815df2515e42fd5a318a30b8d7"
+  },
+  {
+    "path": "/assets/town/watermill.glb",
+    "bytes": 53856,
+    "sha256": "177e76c12f43845303638d1375c323675c3937b053b8762042fe19d3d7d27c5d"
+  },
+  {
+    "path": "/assets/town/windmill.glb",
+    "bytes": 71160,
+    "sha256": "72562df164f5fd36670521462da8f4161cf2c4c1c889799443f0fb44532ad5db"
+  },
+  {
+    "path": "/assets/pirate/Textures/colormap.png",
+    "bytes": 10061,
+    "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+  },
+  {
+    "path": "/assets/town/Textures/colormap.png",
+    "bytes": 11143,
+    "sha256": "4aac939dc33195e35caf8c382ee3cb170054da763577f22d3c22692ec6afccdf"
+  },
+  {
+    "path": "/assets/drift/cartographer-sail.png",
+    "bytes": 3627359,
+    "sha256": "1a33eb8e5972b23511de18e1e22daf80015d71d56df8a3116fa6c7dd9f2d6a49",
+    "source": "Generated for Drift Republics; exact prompt in public/assets/drift/README.md"
+  }
+]

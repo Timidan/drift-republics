@@ -1,0 +1,59 @@
+# Deployment
+
+The complete app is one Node.js process serving the built frontend, HTTP API, and server-sent events. SQLite and account material live in a persistent volume. The provided Compose configuration targets `https://drift.timidan.xyz` behind an existing Caddy proxy on the external Docker network `public_proxy`.
+
+## Build and start
+
+Deploy a reviewed commit from `main`. Build before replacing a running release:
+
+```sh
+git status --short --branch
+git pull --ff-only origin main
+export DRIFT_RELEASE="$(git rev-parse --short=12 HEAD)"
+docker compose build
+docker compose up -d --no-build
+docker compose ps
+```
+
+There are no published application ports. The container runs as the `node` user, with a read-only root filesystem, bounded resources, and the `drift_republics_data` volume mounted at `/app/data`. A fresh volume initializes a new world; existing local accounts and testnet journals are not uploaded.
+
+## Proxy and DNS
+
+Provision the DNS record and TLS through the host's approved configuration. Add only this hostname's route to the existing proxy:
+
+```caddyfile
+drift.timidan.xyz {
+    encode zstd gzip
+    reverse_proxy drift-republics:4187 {
+        header_up X-Forwarded-For {http.request.client_ip}
+        flush_interval -1
+    }
+}
+```
+
+If the host already uses Cloudflare-only origin access and an origin certificate, apply its existing restricted route policy and certificate instead of introducing a second TLS configuration. The proxy must trust only the actual upstream proxy ranges before using `client_ip`. Validate the complete Caddy configuration before reloading it.
+
+`DRIFT_TRUST_PROXY=1` requires the private app port and the header replacement above. Forwarding an arbitrary incoming header would allow clients to bypass request limits.
+
+## Verify
+
+```sh
+docker compose exec -T drift-republics node -e "fetch('http://127.0.0.1:4187/api/health').then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"
+curl --fail https://drift.timidan.xyz/api/health
+```
+
+Open the public landing page, enter practice, complete the first delivery, and reload to check persistence. Confirm the session cookie is Secure and HttpOnly and that game events stream through the proxy. A healthy process alone does not verify those flows.
+
+The initial configuration permits practice and invitation-only shared play. Chain writes are explicitly disabled. Wallet operator keys, chain configuration, transaction journals, and invitations are private runtime material; keep them out of Git and image build contexts.
+
+## Persistence and rollback
+
+Keep the volume across all releases. Before an update that changes stored data, stop only this app and take a consistent backup of its data volume. Never copy a live SQLite database without its transaction state.
+
+To roll back application code, keep the previous image and start it with the same volume:
+
+```sh
+DRIFT_RELEASE=PREVIOUS_COMMIT docker compose up -d --no-build
+```
+
+This initial release has no predecessor. Before public cutover, rollback means stopping its staged container while leaving other services and the staged files intact. A later DNS/proxy rollback must restore the exact prior record and route configuration. Do not remove the data volume.

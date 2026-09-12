@@ -1,0 +1,11 @@
+# Drift Republics art
+
+`cartographer-sail.png` was generated for Drift Republics on September 10, 2026 using the built-in image generation tool. It is the diffuse texture on the game's curved sails and harbor banners, and appears in the livery preview cards. The original generated PNG is preserved here without compositing or repainting.
+
+The boats, cargo outriggers, engine, freight and harbor structures are original geometry in `src/drift-art.ts`. The Outer Reaches landmarks, settlement skylines and distinct cutter, lighter and barge hulls are also authored geometry. No stock nature models are loaded by the current renderer. The four finish names describe colorways of this shared design, not four different boat models or separate texture collections.
+
+The locally rendered music loop, `lanterns-on-the-tide.ogg`, is an original D Dorian composition made for this game. Its score and render method are preserved in `scripts/compose-harbor.py`. It uses no sampled recording.
+
+## Exact generation prompt
+
+Create a finished square 1024x1024 game texture for a custom stylized 3D merchant sailing boat in Drift Republics. This is the actual flat diffuse texture stretched across a sail, NOT concept art and NOT a picture of a boat. Entire canvas is flat ivory woven sailcloth, edge to edge, with subtle hand-painted warm linen fibers, understated sewn vertical panel seams, a double dark indigo stitched border well inside all four edges. Central bold ORIGINAL nautical heraldic motif: a sweeping deep indigo manta-ray-like twin sail surrounding a small muted antique-gold compass diamond, with three curling stylized wave strokes below; expressive hand-inked geometry, big shapes legible from a game camera, sophisticated maritime craft, no real-world logo. One central crest only, centered around upper middle with generous clear cloth. Weathering restrained at edges, cloth color should stay near ivory so real-time material tinting works. No perspective, no lighting gradients, no cast shadow, no 3D folds, no canvas background around the sail, no objects, no text, no letters, no UI, no water scene, no watermark. Texture fills entire image; corners remain cloth. Game style: handcrafted coastal merchant republics, indigo and antique brass on linen.

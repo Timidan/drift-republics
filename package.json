@@ -1,0 +1,35 @@
+{
+  "name": "drift-republics-sample",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p server/tsconfig.json",
+    "start": "node server/main.ts",
+    "testnet:view": "DRIFT_CHAIN_READ_ONLY=1 DRIFT_DATA_DIR=data/testnet DRIFT_API_PORT=4190 DRIFT_ORIGIN=http://localhost:4190 node server/main.ts",
+    "check": "node scripts/check-boat.mjs && node scripts/check-economy.mjs && node scripts/check-seamanship.mjs && node scripts/check-community.mjs && node scripts/check-frontier-economy.mjs && node scripts/check-civic-budget.mjs && node scripts/check-art.mjs && node scripts/check-wallet.mjs",
+    "contracts": "forge build && node scripts/contract-abi.mjs",
+    "check:contracts": "forge test"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^9.25.0",
+    "@babylonjs/loaders": "^9.25.0",
+    "@gluwa/asc-contracts": "0.2.1",
+    "@openzeppelin/contracts": "5.4.0",
+    "@reown/appkit": "1.8.23",
+    "@reown/appkit-adapter-ethers": "1.8.23",
+    "ethers": "6.17.0",
+    "viem": "^2.56.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  },
+  "overrides": {
+    "axios": "1.20.0"
+  }
+}

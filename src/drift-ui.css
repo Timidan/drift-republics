@@ -1,0 +1,278 @@
+/* Instruments frame the sea; harbor work opens only when the player asks for it. */
+#hud-top { position: fixed; inset: 16px 18px auto; z-index: 4; min-height: 64px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 10px 16px; border-top-color: #d7b87b; }
+.brand { display: flex; align-items: center; gap: 10px; flex: none; }
+.brand > .icon { width: 38px; height: 38px; color: var(--accent); }
+.brand h1 { font-size: 1.65rem; line-height: 1; }
+.brand span { font-size: .75rem; color: var(--muted); }
+.resource-meters { display: flex; gap: 24px; align-items: center; font-variant-numeric: tabular-nums; }
+.resource-meters > div { display: flex; align-items: center; gap: 7px; font-size: .875rem; white-space: nowrap; }
+.resource-meters .icon { width: 23px; height: 23px; color: #d6bd8a; }
+.resource-meters strong { color: var(--accent); }
+.resource-meters .weather-meter { max-width: 178px; white-space: normal; font-size: .75rem; line-height: 1.3; }
+.account-strip { display: flex; gap: 8px; align-items: center; font-size: .8125rem; }
+.account-strip > span { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account-strip button { padding: 8px; }
+#departure-notice { position: fixed; z-index: 5; top: 90px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px); color: #2c2934; background: var(--accent); border-radius: 5px; padding: 8px 14px; font-size: .875rem; }
+#fleet { position: fixed; z-index: 3; left: 18px; top: 96px; width: 250px; padding: 12px; max-height: 320px; overflow: auto; }
+#fleet > summary { display: flex; align-items: center; gap: 8px; list-style: none; }
+#fleet > summary::after { content: '+'; margin-left: auto; color: var(--accent); }
+#fleet[open] > summary::after { content: '−'; }
+#fleet-count { font-size: .75rem; color: var(--muted); }
+#fleet-list { display: grid; margin-top: 12px; gap: 7px; }
+#fleet-list button { width: 100%; justify-content: flex-start; text-align: left; }
+#fleet-list .fleet-text { display: grid; gap: 2px; min-width: 0; }
+#fleet-list strong { font-size: .875rem; overflow-wrap: anywhere; }
+#fleet-list span span { font-size: .75rem; color: var(--muted); }
+#fleet-list button.selected { border-color: var(--accent); background: #d2b67f15; }
+#activity { margin-top: 14px; } #house-notices { padding-left: 18px; font-size: .8125rem; color: var(--muted); }
+#house-notices li { margin: 8px 0; }
+#objective { position: fixed; z-index: 2; left: 18px; top: 165px; width: 292px; display: flex; gap: 12px; padding: 16px; background: #273049ed; }
+#objective:has(~ #economy-ui #fleet[open]) { display: none; }
+.objective-seal { color: var(--accent); } .objective-seal .icon { width: 30px; height: 30px; }
+#objective-eyebrow { color: #dcca9e; font-size: .75rem; }
+#objective-title { display: block; font: 1.2rem/1.15 var(--display); margin: 5px 14px 7px 0; }
+#objective-copy { font-size: .8125rem; color: var(--muted); line-height: 1.35; }
+#objective-action { background: none; color: var(--accent); border: 0; padding: 10px 0 0; min-height: 30px; justify-content: start; }
+#objective-dismiss { position: absolute; top: 4px; right: 3px; padding: 7px; background: none; border: 0; min-height: 32px; }
+#objective-dismiss .icon { width: 16px; height: 16px; }
+#game-tabs { position: fixed; z-index: 5; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; padding: 7px; border-top-color: #ddbd7b; }
+#game-tabs button { flex-direction: column; min-width: 76px; gap: 4px; padding: 6px 9px; background: none; border-color: transparent; font-size: .75rem; font-weight: 500; }
+#game-tabs button .icon { width: 25px; height: 25px; color: #d9c491; }
+#game-tabs button[aria-pressed='true'] { background: #e5c27e; color: #252b3c; }
+#game-tabs button[aria-pressed='true'] .icon { color: #4e3c29; }
+#game-tabs > .secondary-view { display: none; }
+#more-views-button { display: inline-flex; }
+#more-views { inset: auto 8px calc(var(--tabs-height, 71px) + 24px + env(safe-area-inset-bottom)) auto; margin: 0; padding: 8px; width: 240px; color: var(--text); }
+#game-tabs #more-views button { flex-direction: row; justify-content: start; width: 100%; min-height: 48px; padding: 10px; font-size: 1rem; }
+#more-views::backdrop { background: #0e172b55; }
+#game-context { --text: #2e3344; --muted: #596171; --panel-border: #b2ad9c; --accent: #d49d45; color: var(--text); color-scheme: light; position: fixed; right: 18px; top: 96px; bottom: 102px; width: 428px; padding: 22px 22px 0; z-index: 4; background: var(--paper); border-color: #c6ad75; border-radius: 8px; }
+#game-context { display: flex; flex-direction: column; top: var(--hud-clearance, 96px); }
+#game-context[data-view='voyage'] .port-picker { display: none; }
+#context-title { font: 1.95rem/1.1 var(--display); list-style: none; padding-right: 35px; color: var(--text); flex: none; cursor: var(--cursor-game, default); }
+#context-close { position: absolute; right: 14px; top: 13px; width: 40px; border: 0; padding: 7px; background: none; }
+#game-context button { background: #e6ddc8; color: #303342; border-color: #b5aa8b; }
+#game-context button:hover:not(:disabled) { background: #ddd0af; border-color: #947044; }
+#game-context button.primary, #game-context button[aria-pressed='true'] { background: #d7a956; border-color: #a47938; color: #272731; }
+#game-context input, #game-context select, #game-context textarea { background: #fff9e9; color: #293044; border-color: #b9b6a5; }
+#game-context a { color: #3a537b; }
+#game-context :focus-visible { outline-color: #76511f; }
+#game-context #context-close { background: none; }
+.port-picker { margin: 14px 0 12px; display: flex; flex-direction: row; gap: 10px; align-items: center; flex: none; }
+.port-picker select { flex: 1; width: auto; min-height: 40px; }
+#port-crest { display: flex; color: var(--city-dark, #625195); }
+#context-content { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 15px 2px 24px; border-top: 1px solid #c6bda7; }
+#context-content[aria-busy='true'] button { pointer-events: none; opacity: .55; }
+.practice-guide { flex: none; margin: 0 0 10px; padding: 9px 10px; font-size: .8125rem; line-height: 1.35; background: #e0d4b3; color: #474136; border-radius: 4px; }
+.good { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.good .icon { color: var(--good-color, #7c725a); }
+#game-context .icon[data-icon='kelp'] { color: #257459; }#game-context .icon[data-icon='timber'] { color: #986434; }#game-context .icon[data-icon='scrap'] { color: #587381; }
+#game-context .icon[data-icon='fuel'] { color: #a7651f; }#game-context .icon[data-icon='plates'] { color: #4e648e; }#game-context .icon[data-icon='repairKit'] { color: #a94e48; }#game-context .icon[data-icon='fish'] { color: #237c90; }
+.resource-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 5px; font-size: .8125rem; }.resource-chip .icon { width: 22px; height: 22px; }
+[data-good='kelp'] { --good-color: #257459; } [data-good='timber'] { --good-color: #986434; } [data-good='scrap'] { --good-color: #587381; }
+[data-good='fuel'] { --good-color: #a7651f; } [data-good='plates'] { --good-color: #4e648e; } [data-good='repairKit'] { --good-color: #a94e48; } [data-good='fish'] { --good-color: #237c90; }
+.materials { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin: 7px 0; }
+.materials .good { font-size: .8125rem; padding: 4px 7px; background: #e5ddc9; border-radius: 4px; }
+.materials .icon { width: 21px; height: 21px; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.stock-table th { text-align: left; color: var(--muted); font-size: .75rem; padding: 8px 0; font-weight: 500; }
+.stock-table td { padding: 10px 0; border-bottom: 1px solid #c4beac66; }
+.stock-table th:not(:first-child), .stock-table td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.cargo-form { grid-template-columns: 1fr 90px; margin: 18px 0; }.cargo-form .button-row { grid-column: 1/-1; }
+.trade-row, .delivery-row, .sea-site, .commission { position: relative; padding: 16px 0; border-bottom: 1px solid #b7af9766; font-size: .875rem; }
+.trade-row { display: grid; grid-template-columns: 1fr auto; gap: 9px; }
+.trade-row > div > span, .item-row > div > span { display: block; color: var(--muted); font-size: .8125rem; margin-top: 4px; }
+.trade-row > strong { font-variant-numeric: tabular-nums; }
+.trade-actions { grid-column: 1/-1; }
+.trade-actions .inline-form { width: 100%; padding: 8px 0; }
+.trade-actions p { font-size: .8125rem; width: 100%; }
+.delivery-row .price { display: inline-flex; align-items: center; gap: 5px; color: #835819; margin-top: 7px; font-weight: 700; }
+.delivery-row p, .sea-site p, .commission p { margin: 8px 0; }
+.order-note { padding: 10px; background: #e5dcc5; border-radius: 4px; font-size: .8125rem; }
+.empty-state { padding: 16px 0; color: var(--muted); font-size: .875rem; }
+.demand-intro { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; }
+.demand-intro > .icon { color: var(--city-dark); width: 38px; height: 38px; }
+.demand-intro strong { font: 1.45rem var(--display); } .demand-intro p { font-size: .8125rem; color: var(--muted); }
+.civic-order { display: grid; grid-template-columns: 45px 1fr auto; gap: 10px; align-items: center; padding: 15px 0; border-bottom: 1px solid #c4baa477; }
+.civic-order > .icon { width: 38px; height: 38px; color: var(--good-color); }
+.civic-order strong { font-size: 1rem; } .civic-order small { display: block; margin-top: 3px; }
+.civic-order .civic-actions { grid-column: 2/-1; display: flex; gap: 8px; flex-wrap: wrap; }
+.civic-price { text-align: right; color: #835819; font-weight: 700; } .civic-price small { font-weight: 400; }
+.resource-strip { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.resource-strip > span { color: var(--muted); font-size: .8125rem; }
+.workshop { border-top: 1px solid #b7af9766; margin-top: 24px; }
+.workshop h3 { display: flex; align-items: center; gap: 9px; }
+.specialist-badge { display: inline-flex; gap: 5px; align-items: center; color: #326043; font-size: .8125rem; padding: 5px 8px; background: #cadcc1; border-radius: 4px; margin-bottom: 12px; }
+.recipe { grid-template-columns: 1fr 65px; align-items: end; padding: 17px 0; border-bottom: 1px solid #b7af9766; }
+.recipe > div { grid-column: 1/-1; }.recipe > button { justify-self: end; }
+.recipe-head { display: flex; align-items: center; gap: 10px; font-size: 1rem; }.recipe-head > .icon { width: 32px; height: 32px; }
+.recipe small { display: block; line-height: 1.5; }.recipe .recipe-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.production-job { display: grid; gap: 8px; padding: 14px; background: #dfdcc5; border-radius: 5px; margin-bottom: 16px; }
+.production-job span { font-size: .875rem; }
+.boat-specs { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }.boat-specs > .icon { width: 55px; height: 55px; color: var(--city-dark); }
+.boat-specs strong { display: block; font: 1.5rem var(--display); }.boat-specs span { color: var(--muted); font-size: .8125rem; }
+.hull-options { display: grid; gap: 9px; margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }.hull-options legend { margin-bottom: 9px; }
+.hull-option { display: flex; flex-direction: row; align-items: center; gap: 13px; padding: 12px; background: #e5dcc7; border: 1px solid #bcb198; border-radius: 5px; cursor: var(--cursor-action, pointer); }.hull-option:has(input:checked) { border-color: #946b23; background: #ecdbb7; }
+.hull-option > .icon { width: 50px; height: 50px; color: #625195; }.hull-option strong { font: 1.25rem var(--display); }.hull-option small { display: block; }
+.item-row { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; padding: 17px 0; border-bottom: 1px solid #c4baa477; }
+.item-swatch { width: 52px; height: 56px; display: grid; place-items: center; color: var(--swatch,#665283); background: #e1d7bf; border: 1px solid #b7aa90; border-radius: 5px; }.item-swatch .icon { width: 40px; height: 40px; }
+.paint-inputs { display: flex; gap: 28px; margin: 12px 0; }.paint-inputs label { flex-direction: row; align-items: center; gap: 8px; }
+.livery-description { color: var(--muted); font-size: .875rem; }
+#paint-swatches { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
+#paint-swatches button { display: block; overflow: hidden; padding: 0; text-align: left; }
+#paint-swatches button > span:last-child { display: block; padding: 8px 12px; }
+.finish-cloth { display: block; position: relative; height: 74px; background: var(--sail) url('/assets/drift/cartographer-sail.png') center 43%/cover; background-blend-mode: multiply; }
+.finish-cloth::after { content: ''; position: absolute; bottom: 6px; left: 15%; width: 70%; height: 16px; background: var(--swatch); clip-path: polygon(0 0,100% 0,85% 90%,15% 100%); }
+.paint-preview .button-row { margin-top: 12px; }
+.deck-readings { display: grid; gap: 5px; padding: 14px; border-radius: 5px; background: #28334b; color: #dce5ef; font-size: .875rem; }
+.deck-readings strong { color: #f0ce88; font: 1.4rem var(--display); }.deck-readings span { line-height: 1.4; }
+.helm-pad { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin: 14px 0; }.helm-pad button { min-height: 49px; touch-action: none; user-select: none; }.helm-pad button:last-child { grid-column: 1/-1; }
+.sail-setting { min-width: 0; margin-inline: 0; padding: 12px 0; }.segmented { display: flex; gap: 5px; }.segmented label { flex: 1; min-width: 0; position: relative; cursor: var(--cursor-action, pointer); }.segmented input { position: absolute; opacity: 0; width: 1px; height: 1px; }.segmented span { display: flex; flex-wrap: wrap; height: 100%; justify-content: center; align-items: center; gap: 4px; padding: 11px 7px; min-height: 44px; border: 1px solid #b6ae96; border-radius: 4px; color: #343a4b; background: #e4ddc9; }.segmented input:checked + span { background: #d9b16c; border-color: #977541; }.segmented input:focus-visible + span { outline: 3px solid #aa7833; outline-offset: 2px; }
+#deck-work { color: #59673e; min-height: 26px; margin: 12px 0; }
+.route-options { border: 0; padding: 0; margin: 16px 0; }.route-options legend { font-size: .875rem; padding: 0 0 7px; }
+.route-options label { flex-direction: row; gap: 10px; align-items: center; padding: 13px 0; border-bottom: 1px solid #c3baa388; }.route-options span { display: grid; gap: 3px; }.route-options strong { color: var(--text); }
+#voyage-quote { padding: 16px; margin: 16px 0; background: #e0d7bf; border-radius: 5px; }#voyage-quote dl { margin: 0; }#voyage-quote dl > div { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; }#voyage-quote dd { margin: 0; font-weight: 600; }#voyage-quote dt { color: var(--muted); }
+#confirm-voyage { width: 100%; margin: 12px 0; min-height: 48px; }
+.voyage-underway { text-align: center; padding: 20px 0; }.voyage-underway > .icon { width: 80px; height: 80px; color: #625195; }.voyage-underway > strong { display: block; font: 2.6rem var(--display); margin: 16px 0; }
+.departure-card { padding: 15px; margin: 16px 0; border: 1px solid #af9971; border-radius: 5px; background: #e4d8ba; }.departure-card > strong { font: 1.3rem var(--display); }
+.civic-health { display: grid; gap: 9px; margin: 16px 0; }.civic-health > div { display: flex; justify-content: space-between; }.civic-health small { line-height: 1.4; }
+.resident-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 9px 0; }
+.activity-log, .radio-log { padding-left: 18px; color: var(--muted); font-size: .875rem; }.activity-log li, .radio-log li { margin: 10px 0; }.radio-log strong { color: #3f4a66; }.radio-log p { overflow-wrap: anywhere; margin-top: 3px; }
+.career-panel { padding: 14px; background: #e2d7bd; border: 1px solid #bca880; border-radius: 5px; margin-bottom: 18px; }.career-panel > strong { font: 1.4rem var(--display); }.career-panel p { font-size: .875rem; margin: 8px 0; }
+.refit-row { display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; padding-bottom: 15px; border-bottom: 1px solid #c3baa388; }.refit-row > .icon { width: 36px; height: 36px; color: #7c6336; }.refit-row > div { flex: 1; }.refit-row small { display: block; margin: 5px 0; }
+#chart { position: fixed; left: 18px; bottom: 120px; z-index: 2; width: 232px; padding: 14px; }
+.chart-heading { display: flex; justify-content: space-between; gap: 6px; font-size: .8125rem; }.chart-heading span { color: var(--muted); }
+#minimap { display: block; width: 100%; aspect-ratio: 1; margin: 10px 0; cursor: var(--cursor-action, crosshair); touch-action: manipulation; }
+#minimap text { font: 105px var(--body); fill: #f2e8c8; paint-order: stroke; stroke: #17243b; stroke-width: 14px; stroke-linejoin: round; pointer-events: none; }
+#route-info { font-size: .75rem; color: #e8c47d; line-height: 1.4; margin: 9px 0; }
+#route-presets { display: flex; gap: 6px; }#route-presets button { flex: 1; padding: 7px; min-width: 0; }
+#chart-tools { margin-top: 10px; font-size: .75rem; }#chart-tools summary { font-size: .75rem; }.chart-tools { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin: 12px 0; }.grid-toggle { flex-direction: row; align-items: center; font-size: .75rem; }.zoom-label { display: flex; flex-direction: row; justify-content: space-between; font-size: .75rem; }
+#sea-actions { position: fixed; z-index: 3; bottom: 110px; left: 50%; transform: translateX(-50%); padding: 5px; display: flex; gap: 4px; }
+#sea-actions button { background: none; border: none; font-size: .8125rem; padding: 8px; min-height: 40px; }.sea-action .icon { width: 22px; }
+#docking-guide { position: fixed; z-index: 3; bottom: 164px; left: 50%; transform: translateX(-50%); padding: 8px 12px; width: max-content; max-width: calc(100vw - 32px); font-size: .875rem; background: #273950f0; color: #f2d18e; border-radius: 4px; }
+#hud-bottom { position: fixed; inset: auto 18px 20px; z-index: 3; display: flex; justify-content: space-between; align-items: end; pointer-events: none; }#hud-bottom > * { pointer-events: auto; }
+#boat-status { padding: 11px 14px; width: 286px; }#selected-boat-name { display: block; font: 1.1rem var(--display); }#selected-boat-location { font-size: .75rem; color: var(--muted); }#status { font-size: .75rem; color: var(--muted); line-height: 1.35; margin-top: 5px; }
+.condition-bar { height: 4px; background: #8292a433; margin-top: 6px; border-radius: 4px; overflow: hidden; }#quick-health { display: block; width: 100%; height: 100%; background: #98c7ab; }
+#actions { display: flex; gap: 3px; padding: 5px; }#actions button { padding: 8px; border: 0; background: none; }#actions .icon { width: 20px; height: 20px; }
+#hint, #game-toast { position: fixed; z-index: 8; bottom: 182px; left: 50%; transform: translateX(-50%); padding: 12px 16px; width: max-content; max-width: min(560px,calc(100vw - 32px)); font-size: .875rem; background: #f1d797; color: #303344; border: 1px solid #b49359; border-radius: 6px; box-shadow: 0 8px 28px #0c17384d; text-align: center; }
+#game-toast.error { background: #f5c6b3; }
+#reward-banner { position: fixed; z-index: 7; top: 105px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; align-items: center; max-width: calc(100vw - 30px); padding: 16px 22px; background: #f4dc9e; color: #463827; border: 1px solid #c19443; border-radius: 7px; box-shadow: 0 9px 40px #0b193860; }
+#reward-banner .icon { width: 36px; height: 36px; }#reward-banner strong { display: block; font: 1.5rem var(--display); }#reward-banner span { font-size: .875rem; }
+#account-dialog, #settings-dialog, #guide-dialog, #wallet-dialog { color: var(--text); width: min(520px,calc(100vw - 28px)); max-height: calc(100dvh - 36px); padding: 24px; overflow: auto; overscroll-behavior: contain; }
+#account-dialog::backdrop, #settings-dialog::backdrop, #guide-dialog::backdrop, #wallet-dialog::backdrop { background: #0e172bc4; }
+.chain-route { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 14px 0; font-size: .8125rem; }
+.chain-route > span { display: inline-flex; align-items: center; gap: 7px; }
+.chain-route img { width: 28px; height: 28px; object-fit: contain; background: #f4eddb; border-radius: 50%; padding: 3px; }
+#guide-dialog p, #account-dialog form p { font-size: .9375rem; line-height: 1.5; margin: 14px 0; }
+#guide-dialog .section-title { margin-bottom: 20px; }
+#guide-content h3 { font: 1.6rem/1.2 var(--display); margin: 16px 0; }
+.guide-live-status, .recovery-result { padding: 14px; background: #d5b67012; border: 1px solid #d5b67060; border-radius: 6px; overflow-wrap: anywhere; }
+.guide-navigation { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--panel-border); }
+#guide-dialog button, #account-dialog button { min-height: 44px; }
+.recovery-result { margin: 18px 0; } .recovery-result button { margin-top: 10px; } #recovery-code { font-family: ui-monospace, monospace; }
+.wallet-action-status { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 30; max-width: calc(100vw - 24px); padding: 10px 16px; border: 1px solid #d5b670; border-radius: 6px; background: #16283d; color: #f4deb0; font-size: .875rem; pointer-events: none; }
+#game-context .workspace-help { background: none; border: 0; padding: 0 0 12px; min-height: 44px; font-size: .8125rem; color: #5b4c30; }
+#account-dialog > p { font-size: .875rem; color: var(--muted); margin: 14px 0; }#account-dialog details { border-top: 1px solid var(--panel-border); padding: 15px 0; }#account-dialog summary { margin-bottom: 12px; }#account-error { color: #ffc7b4 !important; }
+#settings-dialog > label { margin-bottom: 16px; }#settings-dialog .section-title { margin: 0 0 20px; }#help { margin: 20px 0; }#help p,#help li,#credits p { font-size: .875rem; color: var(--muted); margin: 10px 0; }#help ul { padding-left: 18px; }#credits { margin-top: 20px; }
+.chain-order { border-top: 1px solid var(--panel-border); padding: 18px 0; }.chain-order p { font-size: .875rem; margin: 10px 0; }.chain-order .button-row { margin-top: 10px; }.chain-status, .network-note { color: #765923; }.network-note, .chain-error, .exact-terms { font-size: .8125rem; overflow-wrap: anywhere; }.chain-error { color: #9b3d2e; }.exact-terms dt { color: var(--muted); margin-top: 8px; }.exact-terms dd { margin: 3px 0; }.transaction-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.overlay { position: fixed; inset: 0; z-index: 20; background: #18243cf5; display: grid; place-items: center; }.overlay .panel { width: min(410px,calc(100vw - 40px)); text-align: center; padding: 34px; background: transparent; border: 0; box-shadow: none; }.loading-emblem .icon { width: 86px; height: 86px; color: #e2bd74; margin-bottom: 20px; }.overlay h2 { font-size: 2.3rem; }.overlay p { margin: 15px 0 23px; color: #cfdaeb; font-size: .875rem; }#loading-error { font-size: .875rem; color: #f6c3ae; }#loading-error ul { text-align: left; padding-left: 20px; }
+#game-context[data-view='chart'] { width: min(1060px,calc(100vw - 310px)); }
+#game-context[data-view='chart'] .port-picker { display: none; }
+.trade-map { width: 100%; aspect-ratio: 1; display: block; background: #27334b; border-radius: 7px; margin-bottom: 18px; }.trade-map text { fill: #f5e8c8; font: 20px var(--body); }.trade-map .city-title { font-family: var(--display); font-size: 28px; }.trade-map .map-goods { font-size: 20px; fill: #d4ddeb; }.trade-map path { fill: none; stroke: #cbb78477; stroke-width: 2; stroke-dasharray: 5 5; }
+.trade-chart-columns { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }.trade-chart-columns > * { min-width: 0; }.trade-run { display: grid; grid-template-columns: 35px 1fr auto; gap: 10px; align-items: start; border-bottom: 1px solid #b7af9766; padding: 14px 0; }.trade-run > .icon { width: 32px; height: 32px; color: var(--good-color); }.trade-run p { font-size: .8125rem; color: var(--muted); margin-top: 4px; }.trade-run button { grid-column: 2/-1; justify-self: start; }.trade-run .margin { font-weight: 700; color: #336345; }.price-board { width: 100%; border-collapse: collapse; font-size: .875rem; }.price-board th { text-align: left; font-size: .8125rem; color: var(--muted); padding: 8px 5px; }.price-board td { padding: 10px 5px; border-bottom: 1px solid #b7af9766; }.price-board td:not(:first-child) { text-align: right; }
+@media (max-height: 820px) and (min-width: 761px) { #objective { width: 250px; padding: 12px; top: 159px; }#objective-copy { display: none; }#objective-title { font-size: 1rem; }#objective-action { padding-top: 5px; }#chart { padding: 12px; width: 214px; bottom: 126px; }#chart-tools { display: none; }#minimap { margin: 6px 0; }#game-context { top: var(--hud-clearance, 91px); }#hud-top { top: 12px; } }
+@media (max-width: 1240px) and (min-width: 761px) { .account-strip > span { display: none; }.resource-meters { gap: 14px; }.resource-meters .weather-meter { display: none; }#game-context { width: 390px; }#boat-status { width: 230px; }#game-tabs button { min-width: 64px; padding-inline: 6px; }#game-context[data-view='chart'] { width: calc(100vw - 40px); }body:has(#game-context[data-view='chart']:not([hidden])) #chart, body:has(#game-context[data-view='chart']:not([hidden])) #objective { display: none; } }
+@media (max-width: 1000px) and (min-width: 761px) { #hud-top { gap: 14px; }.brand h1 { font-size: 1.3rem; }#account-button span { display: none; } }
+@media (max-width: 760px) {
+  button { min-height: 44px; }input,select,textarea { min-height: 44px; }
+  #hud-top { inset: calc(8px + env(safe-area-inset-top)) 8px auto; padding: 9px 10px; gap: 7px; display: grid; grid-template-columns: minmax(0,1fr) auto; min-height: 62px; }
+  .brand { gap: 7px; min-width: 0; }.brand > .icon { width: 29px; height: 29px; }.brand h1 { font-size: 1.27rem; }.brand span { display: none; }
+  .account-strip { grid-column: 2; grid-row: 1; margin-left: auto; gap: 4px; }.account-strip > span { display: none; }.account-strip button { padding: 7px; min-height: 38px; }.account-strip button .icon { width: 21px; height: 21px; }#account-button span { display: none; }
+  .resource-meters { grid-column: 1/-1; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 4px; width: 100%; }.resource-meters > div { font-size: .8125rem; gap: 3px; white-space: normal; line-height: 1.2; }.resource-meters .icon { width: 20px; height: 20px; }.resource-meters .weather-meter { display: none; }
+  #fleet { left: 8px; top: var(--hud-clearance, 106px); width: 216px; max-height: calc(100dvh - 260px); padding: 10px; }#fleet-count { font-size: .75rem; }
+  #objective { left: 8px; top: calc(var(--hud-clearance, 106px) + 60px); width: min(284px,calc(100vw - 65px)); padding: 12px; gap: 9px; }#objective-copy { font-size: .8125rem; }#objective-title { font-size: 1.1rem; }#objective-action { font-size: .8125rem; }
+  #chart { display: block; left: auto; right: 8px; top: var(--hud-clearance, 106px); bottom: auto; width: 132px; padding: 8px; z-index: 3; }
+  #chart[open] { width: 156px; }#chart > summary { min-height: 28px; align-items: center; font-size: .75rem; }#chart > summary span { display: none; }
+  #chart > summary::after { content: '+'; color: var(--accent); }#chart[open] > summary::after { content: '−'; }
+  #chart #chart-tools, #chart #route-presets { display: none; }#chart #route-info { font-size: .75rem; }#chart #minimap text { font-size: 160px; }
+  body.workspace-open #chart, body:has(#chart[open]) #fleet, body:has(#chart[open]) #objective, body:has(#chart[open]) #hud-bottom { display: none; }
+  #game-tabs { bottom: calc(8px + env(safe-area-inset-bottom)); padding: 5px 3px; width: calc(100vw - 16px); max-width: 520px; gap: 4px; border-radius: 8px; }
+  #game-tabs > button { min-width: 0; flex: 1; padding: 5px 4px; font-size: .75rem; min-height: 59px; }#game-tabs > [data-panel='workshop'] { flex: 1.25; }
+  #game-tabs > .secondary-view { display: none; }#more-views-button { display: inline-flex; }
+  .icon { width: 23px; height: 23px; }#game-tabs button .icon { width: 24px; height: 24px; }
+  #game-context, #game-context[data-view='chart'] { left: 8px; right: 8px; top: var(--hud-clearance, 106px); bottom: calc(var(--tabs-height, 71px) + 16px + env(safe-area-inset-bottom)); width: auto; height: auto; max-height: none; padding: 18px 16px 0; border-radius: 14px 14px 7px 7px; z-index: 6; }
+  #objective[data-underway='true'] #objective-copy { display: none; }#objective[data-underway='true'] #objective-action { min-height: 44px; padding-top: 3px; }
+  #context-title { font-size: 1.6rem; min-height: 32px; }#context-close { top: 7px; right: 7px; }.port-picker { margin: 8px 0; gap: 8px; font-size: .8125rem; }.port-picker select { min-height: 38px; }#context-content { padding-top: 12px; }.practice-guide { font-size: .75rem; margin: 0 0 8px; padding: 7px; }
+  body.workspace-open #objective, body.workspace-open #fleet, body.workspace-open #hud-bottom, body.workspace-open #sea-actions, body.workspace-open #docking-guide { display: none; }
+  #hud-bottom { inset: auto 8px 146px; }#boat-status { width: 216px; padding: 9px 11px; }#selected-boat-name { font-size: 1.1rem; }#status { font-size: .75rem; }#selected-boat-location { font-size: .75rem; }
+  #actions { flex-direction: column; padding: 3px; gap: 1px; }#actions button { padding: 7px; min-height: 38px; }#actions button:nth-child(2), #actions button:nth-child(4) { display: none; }
+  #sea-actions { bottom: 88px; max-width: calc(100vw - 16px); width: max-content; padding: 4px; }#sea-actions button { min-height: 41px; padding: 7px 11px; gap: 5px; font-size: .8125rem; }
+  #docking-guide { bottom: 265px; font-size: .8125rem; width: calc(100vw - 32px); text-align: center; }
+  #departure-notice { top: 107px; font-size: .8125rem; }
+  #hint, #game-toast { bottom: 155px; font-size: .875rem; z-index: 12; }#reward-banner { top: 112px; padding: 12px 16px; width: max-content; }#reward-banner strong { font-size: 1.3rem; }
+  #account-dialog, #settings-dialog, #guide-dialog, #wallet-dialog { padding: 20px; }.trade-chart-columns { grid-template-columns: 1fr; gap: 8px; }.trade-map { min-height: 260px; aspect-ratio: 1; }.trade-map .city-title { font-size: 32px; }.trade-map text { font-size: 26px; }.trade-map .map-goods { font-size: 24px; }
+  .account-strip button, #actions button, #sea-actions button, #objective-action, #objective-dismiss, #context-close, .port-picker select, .form-details summary { min-height: 44px; }
+  .account-strip button, #actions button, #objective-dismiss, #context-close { min-width: 44px; }
+  .civic-order { grid-template-columns: 36px 1fr auto; gap: 8px; }.civic-order > .icon { width: 33px; height: 33px; }.civic-order .civic-actions { grid-column: 1/-1; }.civic-order strong { font-size: .9375rem; }
+}
+@media (max-width: 380px) { .brand h1 { font-size: min(1.2rem,20px); }.brand > .icon { width: 26px; }#game-tabs button { font-size: .75rem; }#sea-actions button { padding-inline: 7px; } }
+@media (max-height: 500px) and (orientation: landscape) {
+  body.workspace-open :is(#hud-top, #fleet, #objective, #chart, #hud-bottom, #sea-actions, #docking-guide) { display: none; }
+  #game-context, #game-context[data-view='chart'] { inset: 8px 8px calc(var(--tabs-height, 60px) + 16px + env(safe-area-inset-bottom)) auto; width: min(620px,calc(100vw - 16px)); padding: 12px 16px 0; }
+  #context-title { font-size: 1.45rem; }.port-picker { margin: 4px 0; }#context-content { padding-top: 8px; }
+  #game-tabs { bottom: calc(8px + env(safe-area-inset-bottom)); width: calc(100vw - 16px); max-width: 780px; padding: 5px; gap: 4px; }
+  #game-tabs > button { flex: 1; flex-direction: row; min-width: 0; min-height: 44px; padding: 7px 5px; }
+}
+
+#hud-top { gap: 14px; }
+#wallet-button { flex: none; min-height: 44px; border-color: #88bca7; color: #c9f6e2; font-size: .8125rem; }
+#wallet-dialog { width: min(540px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; }
+#wallet-dialog p { margin: 12px 0; line-height: 1.5; }
+.chain-mode { color: #b6e4cc; font-weight: 700; }
+#objective-action { min-height: 44px; }
+@media (max-height: 820px) and (min-width: 761px) { #objective-copy { display: block; } }
+@media (max-width: 1240px) and (min-width: 761px) { .resource-meters > div:nth-child(3) { display: none; } }
+@media (max-width: 760px) {
+  #wallet-button { grid-column: 2; grid-row: 2; padding: 6px 9px; gap: 5px; }
+  .resource-meters { grid-column: 1; grid-row: 2; grid-template-columns: 1fr; }
+  .resource-meters > div:nth-child(n+2) { display: none; }
+  #wallet-dialog { padding: 20px; }
+}
+
+.wallet-summary { display: grid; text-align: left; gap: 1px; }
+.wallet-summary small { color: #a7c7b7; font-size: .65rem; font-weight: 400; }
+
+/* Interaction and event motion uses transforms; server refreshes do not restart panel entrances. */
+button { transition: transform 180ms ease-out, background-color 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out; }
+@media (hover: hover) and (pointer: fine) {
+  button:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 4px 12px #001e2440; }
+  button:focus-visible { transform: none; }
+}
+button[aria-pressed="true"] > .icon { color: #ffdb8b; }
+dialog[open], #more-views:popover-open { animation: game-arrive 220ms ease-out; }
+@keyframes game-arrive { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+.production-job, .battle-card { position: relative; overflow: hidden; }
+.production-job::after, .battle-card::after { content: ''; position: absolute; pointer-events: none; inset: 0; background: linear-gradient(110deg, transparent 25%, #efc36d12 50%, transparent 75%); transform: translateX(-100%); animation: forge-glow 3s ease-in-out infinite; }
+@keyframes forge-glow { to { transform: translateX(100%); } }
+.frontier-card, .annex-project, .advance-terms { border: 1px solid #8d98765c; border-radius: 12px; padding: 16px; margin: 14px 0; background: #e4dac4; }
+.frontier-intro h3 { font-size: 1.45rem; margin: 8px 0; }
+.frontier-intro .eyebrow { color: #795124; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; }
+.frontier-card h3 { display: flex; align-items: center; gap: 8px; }
+.battle-card { padding: 16px; border: 1px solid #dd9856; border-radius: 12px; background: #ead2a4; }
+.advance-terms { border-color: #d0af6880; }
+.salvage-confirm { flex-basis: 100%; font-size: .85rem; }
+.recipe .order-note { grid-column: 1 / -1; }
+#raid-window { color: #974b27; }
+#context-content[aria-busy="true"] button { cursor: progress; }
+@media (prefers-reduced-motion: reduce) { .production-job::after, .battle-card::after { display: none; } }
+.calm-motion .production-job::after, .calm-motion .battle-card::after { display: none; }
+
+#game-context[data-view="frontier"] .port-picker { display: none; }
+
+#wallet-dialog { max-width: 470px; }
+#wallet-dialog .wallet-account { overflow-wrap: anywhere; font-size: 1rem; }
+#wallet-dialog .wallet-house-link { padding: 18px 0; margin-top: 16px; border-top: 1px solid var(--panel-border); }
+#wallet-dialog .wallet-house-link button { margin-top: 12px; }
+#wallet-dialog .wallet-trading { padding: 14px 0; border-top: 1px solid var(--panel-border); }
+#wallet-dialog .wallet-trading summary { min-height: 44px; align-content: center; }
+#wallet-dialog .wallet-trading .button-row { margin-top: 14px; }
+#wallet-dialog > .muted { margin-top: 12px; }

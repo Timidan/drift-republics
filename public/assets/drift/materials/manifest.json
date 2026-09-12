@@ -1,0 +1,119 @@
+[
+  {
+    "file": "wood-color.jpg",
+    "asset": "brown_planks_03",
+    "page": "https://polyhaven.com/a/brown_planks_03",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_planks_03/brown_planks_03_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "8dfae22286fa9bb0ed62ce7326e8bc14c284e567d38fd64b5a453838080ecf19",
+    "bytes": 570668
+  },
+  {
+    "file": "wood-normal.png",
+    "asset": "brown_planks_03",
+    "page": "https://polyhaven.com/a/brown_planks_03",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/brown_planks_03/brown_planks_03_nor_gl_1k.png",
+    "license": "CC0-1.0",
+    "sha256": "466bfaa1b009378c6f91f4c12d38d4c691885903b55ca245c07b80143c83945f",
+    "bytes": 1642309
+  },
+  {
+    "file": "wood-arm.jpg",
+    "asset": "brown_planks_03",
+    "page": "https://polyhaven.com/a/brown_planks_03",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_planks_03/brown_planks_03_arm_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "2be4c94cc58a0f4ea2120a1004aab5ff1baf720809c321f4fa398cdb31fd3756",
+    "bytes": 126038
+  },
+  {
+    "file": "stone-color.jpg",
+    "asset": "dark_rock",
+    "page": "https://polyhaven.com/a/dark_rock",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_rock/dark_rock_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "7e1148b1749b2200de463b943d4c8994bb24467c96418aa3c283bf65c30e7300",
+    "bytes": 533128
+  },
+  {
+    "file": "stone-normal.png",
+    "asset": "dark_rock",
+    "page": "https://polyhaven.com/a/dark_rock",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/dark_rock/dark_rock_nor_gl_1k.png",
+    "license": "CC0-1.0",
+    "sha256": "aca9a92043899e28245a8df617e1896cf1ad02813d2fa4cf359629b77723cb40",
+    "bytes": 6474633
+  },
+  {
+    "file": "stone-arm.jpg",
+    "asset": "dark_rock",
+    "page": "https://polyhaven.com/a/dark_rock",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_rock/dark_rock_arm_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "face3801e899586af4868008705fcd5fe7a587aae88a13f18aadc3b2568300ca",
+    "bytes": 695979
+  },
+  {
+    "file": "metal-color.jpg",
+    "asset": "rusty_metal_02",
+    "page": "https://polyhaven.com/a/rusty_metal_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rusty_metal_02/rusty_metal_02_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "adaf094391518b6afe787a123942110aa88ef521c844f970b124420f5ed5d3d9",
+    "bytes": 564932
+  },
+  {
+    "file": "metal-normal.png",
+    "asset": "rusty_metal_02",
+    "page": "https://polyhaven.com/a/rusty_metal_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/rusty_metal_02/rusty_metal_02_nor_gl_1k.png",
+    "license": "CC0-1.0",
+    "sha256": "0503ded4da44c20015d0a7db69260bfa19ff978dc59c2949b6de83e3af662ad8",
+    "bytes": 1336485
+  },
+  {
+    "file": "metal-arm.jpg",
+    "asset": "rusty_metal_02",
+    "page": "https://polyhaven.com/a/rusty_metal_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rusty_metal_02/rusty_metal_02_arm_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "2982943ffe3273a65bf788b77fc0c7a4fd8227824386d065d13a8c8c0e07db10",
+    "bytes": 153031
+  },
+  {
+    "file": "plaster-color.jpg",
+    "asset": "grey_plaster",
+    "page": "https://polyhaven.com/a/grey_plaster",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grey_plaster/grey_plaster_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "dcf34c5f3801cc43189f0edae3c430b602c827956e9d6ce4b89a85e53e952da9",
+    "bytes": 704079
+  },
+  {
+    "file": "plaster-normal.png",
+    "asset": "grey_plaster",
+    "page": "https://polyhaven.com/a/grey_plaster",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/grey_plaster/grey_plaster_nor_gl_1k.png",
+    "license": "CC0-1.0",
+    "sha256": "7ffd1ed71c202566e3af93c7c4f4a2f0031ddffb9fd22fb8a282e82fe84aeea2",
+    "bytes": 1237291
+  },
+  {
+    "file": "plaster-arm.jpg",
+    "asset": "grey_plaster",
+    "page": "https://polyhaven.com/a/grey_plaster",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grey_plaster/grey_plaster_arm_1k.jpg",
+    "license": "CC0-1.0",
+    "sha256": "89b687004c658b1a00fe95480115ef4d934d053821c17a04895d0aeb8ef9299f",
+    "bytes": 349854
+  },
+  {
+    "file": "harbor-sky.hdr",
+    "asset": "overcast_soil_puresky",
+    "page": "https://polyhaven.com/a/overcast_soil_puresky",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/overcast_soil_puresky_1k.hdr",
+    "license": "CC0-1.0",
+    "sha256": "2dbbbbb1323a8e8989db2e8306bd13099b215539e5adba41b85738a250a7904e",
+    "bytes": 1195816
+  }
+]
